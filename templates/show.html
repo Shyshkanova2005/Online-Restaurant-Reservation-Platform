@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Усі резервації</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/uploads/bibimbap.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+                Misto
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="navbar-text me-2">
+                    <a href="{{ url_for('autorize') }}" class="btn btn-warning d-flex align-items-center">
+                        Увійти
+                        <img src="/static/uploads/login.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+                <span class="navbar-text me-2">
+                    <a href="{{ url_for('logout') }}" class="btn btn-warning d-flex align-items-center">
+                        Вийти
+                        <img src="/static/uploads/exit.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+                <span class="navbar-text">
+                    <a href="{{ url_for('cart') }}" class="btn btn-success d-flex align-items-center">
+                        Кошик
+                        <img src="/static/uploads/shopping-cart.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+            </div>
+    </nav>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <div class="left-navbar">
+                <a href="{{ url_for('index') }}">Головна</a>
+                <a href="{{ url_for('menu') }}">Меню</a>
+                <a href="{{ url_for('booking') }}">Бронювання</a> 
+                <div class="underline"></div> 
+            </div>
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="card p-4" style="width: 70rem; height: 50rem;">
+        <h1 class="text-center">Усі резервації</h1>
+        <table class="table table-striped-columns">
+            <thead class="table-dark">
+                <tr>
+                    <th>Ім’я</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>День</th>
+                    <th>Гості</th>
+                    <th>Час</th>
+                    <th>Тривалість</th>
+                    <th>Стіл</th>
+                    <th>Замовлення</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for res in reservations %}
+                <tr>
+                    <td>{{ res.name }}</td>
+                    <td>{{ res.phone }}</td>
+                    <td>{{ res.email }}</td>
+                    <td>{{ res.day }}</td>
+                    <td>{{ res.guests }}</td>
+                    <td>{{ res.time }}</td>
+                    <td>{{ res.during }}</td>
+                    <td>{{ res.table }}</td>
+                    <td>
+                        {% if res.order %}
+                            <ul class="list-group list-group-flush">
+                                {% for item in res.order %}
+                                    <li class="list-group-item d-flex justify-content-between">
+                                        <span>{{ item.title }}</span>
+                                        <span>{{ item.price }}₴</span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <span class="text-muted">Немає замовлення</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        
+     <div class="text-center mt-3">
+        <a href="{{ url_for('index') }}" class="btn btn-danger btn-lg">Повернутися до головної</a>
+    </div>   
+    </div>
+    
+    </div>
+    <script src="/static/cursor.js"></script>
+</body>
+</html>

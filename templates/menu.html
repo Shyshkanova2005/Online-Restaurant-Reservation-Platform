@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вхід</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-light">
+  <nav class="navbar bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/static/uploads/bibimbap.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+            Misto
+        </a>
+        <div class="d-flex align-items-center">
+            <span class="navbar-text me-2">
+                <a href="{{ url_for('autorize') }}" class="btn btn-warning d-flex align-items-center">
+                    Увійти
+                    <img src="/static/uploads/login.png" width="20" height="20" class="ms-2">
+                </a>
+            </span>
+            <span class="navbar-text me-2">
+                <a href="{{ url_for('logout') }}" class="btn btn-warning d-flex align-items-center">
+                    Вийти
+                    <img src="/static/uploads/exit.png" width="20" height="20" class="ms-2">
+                </a>
+            </span>
+            <span class="navbar-text">
+                <a href="{{ url_for('cart') }}" class="btn btn-success d-flex align-items-center">
+                    Кошик
+                    <img src="/static/uploads/shopping-cart.png" width="20" height="20" class="ms-2">
+                </a>
+            </span>
+        </div>
+</nav>
+<nav class="navbar bg-body-tertiary">
+  <div class="container">
+      <div class="left-navbar">
+          <a href="{{ url_for('index') }}">Головна</a>
+          <a href="{{ url_for('menu') }}">Меню</a>
+          <a href="{{ url_for('booking') }}">Бронювання</a> 
+          <a href="{{ url_for('show') }}">Усі резервації</a> 
+          <div class="underline"></div> 
+      </div>
+  </div>
+</nav>
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    
+      <div class="col">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/3l0GvTy9P8lMAjho8bdBK4f37C9qqdyJg18zX5fX.webp" class="card-img-top" alt="Стейк">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Стейк зі свинини на грилі зі смаженою картоплею</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Стейк зі свинини на грилі зі смаженою картоплею">
+                    <input type="hidden" name="price" value="289">
+                    <span class="fw-bold">289₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/7fYwur0eTaKgc51iLkptgxemwBML8qk82KlExi7V.webp" class="card-img-top" alt="Млинці">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Млинці з м'ясом та томатним соусом</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Млинці з м'ясом та томатним соусом">
+                    <input type="hidden" name="price" value="188">
+                    <span class="fw-bold">188₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/Lhm6HJbNA8eDlzMHQuJT2Yit8gcEo7FLxi1YW0o6.webp" class="card-img-top" alt="...">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Паста Карбонара</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Паста Карбонара">
+                    <input type="hidden" name="price" value="176">
+                    <span class="fw-bold">176₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+              </div>
+          </div>
+      </div>
+      <div class="col">
+       <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/URRmjVgmx3lhwvcZFNRNDHk2JCxGlcyiSVgI8JLz.webp" class="card-img-top" alt="Стейк">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Стейк лосося з кус-кусом в соусі Песто</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Стейк лосося з кус-кусом в соусі Песто">
+                    <input type="hidden" name="price" value="289">
+                    <span class="fw-bold">289₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+              </div>
+          </div> 
+      </div>
+      <div class="col">
+       <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/xKwzERFOQOAfILBh0lvpLaW1mtl6fxEZWXcfQUq2.webp" class="card-img-top" alt="Стейк">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Паста у томатному соусі</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Паста у томатному соусі">
+                    <input type="hidden" name="price" value="210">
+                    <span class="fw-bold">210₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                  </form>
+              </div> 
+      </div>
+      </div>
+      <div class="col">
+       <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="/static/uploads/ApRWdeF83ZbMiZ3KHz6P5hBZgs9wZeZCYorUN32p.webp" class="card-img-top" alt="Стейк">
+              <div class="card-body d-flex flex-column justify-content-between">
+                  <h6 class="card-title fw-semibold">Куринний стейк з кус-кусом в соусі Песто</h6>
+                  <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Куринний стейк з кус-кусом в соусі Песто">
+                    <input type="hidden" name="price" value="206">
+                    <span class="fw-bold">206₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+              </div> 
+      </div> 
+    </div>
+      <div class="col">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+             <img src="/static/uploads/FvHplte-bbCyvnk-ZJjreGh.webp" class="card-img-top" alt="Кола">
+               <div class="card-body d-flex flex-column justify-content-between">
+                   <h6 class="card-title fw-semibold">Coca-cola</h6>
+                   <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Coca-cola">
+                    <input type="hidden" name="price" value="54">
+                    <span class="fw-bold">54₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+           </div> 
+       </div> 
+      </div> 
+       <div class="col">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+             <img src="/static/uploads/pCuMoDz-MvqddzF-fzodjjw.webp" class="card-img-top" alt="Вода">
+               <div class="card-body d-flex flex-column justify-content-between">
+                   <h6 class="card-title fw-semibold">Вода Bonaqua</h6>
+                   <form method="POST" action="{{ url_for('add_to_cart') }}" class="d-flex justify-content-between align-items-center mt-auto w-100">
+                    <input type="hidden" name="title" value="Вода Bonaqua">
+                    <input type="hidden" name="price" value="44">
+                    <span class="fw-bold">44₴</span>
+                    <button type="submit" class="btn btn-dark rounded-3 px-3 py-1">+ ДОДАТИ</button>
+                </form>
+           </div> 
+       </div>   
+  </div>
+</div>
+
+  <script src="/static/cursor.js"></script>
+</body>
+</html>
+

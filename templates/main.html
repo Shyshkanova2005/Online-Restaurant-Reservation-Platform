@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/static/uploads/bibimbap.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+                Misto
+            </a>
+            <div class="d-flex align-items-center">
+                <span class="navbar-text me-2">
+                    <a href="{{ url_for('autorize') }}" class="btn btn-warning d-flex align-items-center">
+                        Увійти
+                        <img src="/static/uploads/login.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+                <span class="navbar-text me-2">
+                    <a href="{{ url_for('logout') }}" class="btn btn-warning d-flex align-items-center">
+                        Вийти
+                        <img src="/static/uploads/exit.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+                <span class="navbar-text">
+                    <a href="{{ url_for('cart') }}" class="btn btn-success d-flex align-items-center">
+                        Кошик
+                        <img src="/static/uploads/shopping-cart.png" width="20" height="20" class="ms-2">
+                    </a>
+                </span>
+            </div>
+    </nav>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <div class="left-navbar">
+                <a href="{{ url_for('index') }}">Головна</a>
+                <a href="{{ url_for('menu') }}">Меню</a>
+                <a href="{{ url_for('booking') }}">Бронювання</a> 
+                <a href="{{ url_for('show') }}">Усі резервації</a> 
+                <div class="underline"></div> 
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
+
+    <div class="center-card">
+        <div class="carousel-wrapper">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <img src="/static/uploads/photo_2025-04-13_09-47-54.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item active">
+                        <img src="/static/uploads/photo_2025-04-13_10-02-59.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/uploads/photo_2025-04-13_10-03-30.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ресторан Misto</h5>
+            <div class="d-flex justify-content-between">
+                <p class="card-text mb-0">
+                    <strong>Адреса:</strong><br>
+                    Tarasa Shevchenka Ave, 4,<br>
+                    Kamianske, Dnipropetrovs'ka oblast,<br>
+                    Ukraine, 51900
+                </p>
+                <p class="card-text1 mb-0 text-end">
+                    <strong>Телефон:</strong><br>
+                    +389076074532
+                </p>
+            </div>
+            <br>
+            <a href="{{ url_for('booking') }}" class="btn btn-danger btn-lg">Бронювання</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="/static/cursor.js"></script>
+</body>
+
+</html>
